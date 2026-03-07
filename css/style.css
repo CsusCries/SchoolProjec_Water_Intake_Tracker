@@ -1,4 +1,4 @@
-body{
+body {
   font-family: Arial, sans-serif;
   background:#f4f9ff;
   text-align:center;
@@ -6,32 +6,42 @@ body{
   padding:20px;
 }
 
-header{
+header {
   margin-bottom:20px;
 }
 
-h1{
+h1 {
   color:#3a86ff;
 }
 
-.nav{
-  margin:15px;
+/* Navigation buttons */
+.nav {
+  margin: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 12px; /* space between buttons */
+  flex-wrap: wrap; /* allows wrapping on small screens */
 }
 
-.nav a{
-  text-decoration:none;
-  background:#3a86ff;
-  color:white;
-  padding:10px 15px;
-  border-radius:8px;
-  font-size:14px;
+.nav a {
+  text-decoration: none;
+  background: #3a86ff;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: 0.2s;
 }
 
-.progress{
+.nav a:hover {
+  background: #2c6fd6;
+}
+
+.progress {
   margin:20px auto;
 }
 
-.circle{
+.circle {
   width:220px;
   height:220px;
   border-radius:50%;
@@ -45,25 +55,25 @@ h1{
   box-shadow:0 4px 10px rgba(0,0,0,0.1);
 }
 
-#current{
+#current {
   font-size:28px;
   margin:0;
 }
 
-#percent{
+#percent {
   color:#555;
 }
 
-.goal{
+.goal {
   margin-top:10px;
   font-size:16px;
 }
 
-.quick-add{
+.quick-add {
   margin:25px 0;
 }
 
-button{
+button {
   padding:12px 18px;
   margin:6px;
   border:none;
@@ -75,11 +85,11 @@ button{
   transition:0.2s;
 }
 
-button:hover{
+button:hover {
   background:#2c6fd6;
 }
 
-.log, .history, .calendar{
+.log, .history, .calendar {
   background:white;
   padding:15px;
   border-radius:10px;
@@ -88,35 +98,35 @@ button:hover{
   box-shadow:0 3px 8px rgba(0,0,0,0.1);
 }
 
-ul{
+ul {
   list-style:none;
   padding:0;
   margin:0;
 }
 
-li{
+li {
   padding:8px;
   border-bottom:1px solid #eee;
   font-size:14px;
 }
 
-li:last-child{
+li:last-child {
   border-bottom:none;
 }
 
-.status{
+.status {
   margin-top:20px;
   font-size:16px;
 }
 
 /* Calendar */
-.calendar-grid{
+.calendar-grid {
   display:grid;
   grid-template-columns:repeat(7,1fr);
   gap:6px;
 }
 
-.day{
+.day {
   padding:10px;
   background:#f0f6ff;
   border-radius:6px;
@@ -124,22 +134,22 @@ li:last-child{
   text-align:center;
 }
 
-.today{
+.today {
   background:#3a86ff;
   color:white;
 }
 
-.has-water{
+.has-water {
   background:#bde0fe;
   font-weight:bold;
 }
 
-#selectedDate{
+#selectedDate {
   font-weight:bold;
   margin-bottom:10px;
 }
 
-#dailyTotal{
+#dailyTotal {
   margin-top:10px;
   font-weight:bold;
   color:#3a86ff;
@@ -153,7 +163,7 @@ li:last-child{
   flex-wrap:wrap;
 }
 
-.time-block{
+.time-block {
   background:#f9faff;
   padding:10px;
   margin:0;
@@ -161,24 +171,24 @@ li:last-child{
   flex:1 1 120px;
 }
 
-.time-block h4{
+.time-block h4 {
   margin:0 0 6px 0;
   font-size:15px;
   color:#3a86ff;
 }
 
-.time-block ul li{
+.time-block ul li {
   display:flex;
   justify-content:space-between;
   padding:6px;
   border-bottom:1px solid #eee;
 }
 
-.time-block ul li:last-child{
+.time-block ul li:last-child {
   border-bottom:none;
 }
 
-.delete-btn{
+.delete-btn {
   background:red;
   color:white;
   border:none;
@@ -187,6 +197,7 @@ li:last-child{
   font-size:12px;
   cursor:pointer;
 }
+
 .goal-container {
   margin-top: 15px;
   font-size: 16px;
@@ -196,11 +207,75 @@ li:last-child{
   gap: 6px;
 }
 
-#goalInput {
-  width: 80px;
-  padding: 4px 6px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  font-size: 14px;
+/* Estimator */
+.estimator {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 400px;
+  margin: 20px auto;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+  text-align: left;
+}
+
+.estimator h3 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  color: #3a86ff;
+  font-size: 18px;
   text-align: center;
 }
+
+.estimator label {
+  display: block;
+  margin: 10px 0 5px;
+  font-size: 14px;
+  color: #333;
+}
+
+.estimator input,
+.estimator select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  margin-bottom: 12px;
+  box-sizing: border-box;
+  background: #f9faff;
+}
+
+.estimator input:focus,
+.estimator select:focus {
+  border-color: #3a86ff;
+  outline: none;
+  box-shadow: 0 0 4px rgba(58,134,255,0.4);
+}
+
+#estimateBtn,
+.estimator button {
+  width: 100%;
+  margin-top: 12px;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 15px;
+  background:#3a86ff;
+  color:white;
+  border:none;
+  cursor:pointer;
+  transition:0.2s;
+}
+
+#estimateBtn:hover,
+.estimator button:hover {
+  background:#2c6fd6;
+}
+
+#estimateOutput {
+  margin-top: 15px;
+  font-size: 15px;
+  font-weight: bold;
+  color: #3a86ff;
+  text-align: center;
+}
+

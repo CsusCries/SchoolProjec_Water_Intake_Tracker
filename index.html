@@ -1,56 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Water Tracker</title>
-<link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Water Tracker</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<h1>💧 Water Tracker</h1>
+  <h1>💧 Water Tracker</h1>
 
-<div class="progress">
-  <div class="circle">
-    <p id="current">0 ml</p>
-    <p id="percent">0% of goal</p>
+  <div class="progress">
+    <div class="circle">
+      <p id="current">0 ml</p>
+      <p id="percent">0% of goal</p>
+    </div>
+
+    <div class="goal-container">
+      <span>Goal:</span>
+      <span id="goalDisplay">2000 ml</span>
+    </div>
   </div>
 
-  <div class="goal-container">
-    <span>Goal:</span>
-    <input type="number" id="goalInput" value="2000" min="100" step="50"> ml
+  <div class="quick-add">
+    <button data-amount="250">250 ml</button>
+    <button data-amount="500">500 ml</button>
+    <button data-amount="750">750 ml</button>
+    <button data-amount="1000">1 L</button>
   </div>
-</div>
 
-<div class="quick-add">
-  <button data-amount="250">250 ml</button>
-  <button data-amount="500">500 ml</button>
-  <button data-amount="750">750 ml</button>
-  <button data-amount="1000">1 L</button>
-</div>
-
-<div class="log">
-  <h3>Today's Intake</h3>
-  <div class="time-block" id="morningLogsBlock">
-    <h4>🌅 Morning</h4>
-    <ul id="morningLogs"></ul>
+  <div class="log">
+    <h3>Today's Intake</h3>
+    <div class="time-block" id="morningLogsBlock">
+      <h4>🌅 Morning</h4>
+      <ul id="morningLogs"></ul>
+    </div>
+    <div class="time-block" id="noonLogsBlock">
+      <h4>☀️ Noon</h4>
+      <ul id="noonLogs"></ul>
+    </div>
+    <div class="time-block" id="nightLogsBlock">
+      <h4>🌌 Evening</h4>
+      <ul id="nightLogs"></ul>
+    </div>
+    <p id="dailyTotal">Total: 0 ml</p>
+    <button id="resetBtn">Reset Today</button>
   </div>
-  <div class="time-block" id="noonLogsBlock">
-    <h4>🥳 Noon</h4>
-    <ul id="noonLogs"></ul>
-  </div>
-  <div class="time-block" id="eveningLogsBlock">
-    <h4>🌙 Evening</h4>
-    <ul id="eveningLogs"></ul>
-  </div>
-  <p id="dailyTotal">Total: 0 ml</p>
-  <button id="resetBtn">Reset Today</button>
-</div>
 
-<div class="nav">
-  <a href="calendar.html">📅 View Hydration Calendar</a>
-</div>
+  <div class="nav">
+    <a href="calendar.html">📅 View Hydration Calendar</a>
+    <a href="UserWaterEstimater.  html">⚙️ Edit User Data</a>
+  </div>
 
-<script src="js/tracker.js"></script>
+  <script src="js/tracker.js"></script>
 </body>
 </html>

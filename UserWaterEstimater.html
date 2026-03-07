@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Info - Water Tracker</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<h1>💧 Water Tracker Setup</h1>
+
+<div class="estimator">
+  <h3>Enter Your Details</h3>
+  <form id="userInfoForm">
+    <label for="name">Name (optional):</label>
+    <input type="text" id="name" name="name">
+
+    <label for="weight">Weight (kg):</label>
+    <input type="number" id="weight" name="weight" min="20" max="200" step="1" required>
+
+    <label for="age">Age:</label>
+    <input type="number" id="age" name="age" min="1" max="120">
+
+    <label for="activity">Activity Level:</label>
+    <select id="activity" name="activity">
+      <option value="">Select</option>
+      <option value="low">Low</option>
+      <option value="moderate">Moderate</option>
+      <option value="high">High</option>
+    </select>
+
+    <label for="climate">Climate:</label>
+    <select id="climate" name="climate">
+      <option value="">Select</option>
+      <option value="cool">Cool</option>
+      <option value="warm">Warm</option>
+      <option value="hot">Hot</option>
+    </select>
+
+	<button type="submit">Save & Continue</button>
+
+  </form>
+
+  <p id="estimateOutput">Your estimated daily goal will appear here.</p>
+</div>
+
+<div class="nav">
+  <a href="index.html">➡️ Go to Tracker</a>
+</div>
+
+<!-- Connect to the estimator script instead of tracker.js -->
+<script src="js/UserInput.js"></script>
+</body>
+</html>

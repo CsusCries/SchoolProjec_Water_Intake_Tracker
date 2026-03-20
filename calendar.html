@@ -4,7 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Hydration Calendar</title>
+
 <link rel="stylesheet" href="css/style.css">
+
+<!-- Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
 
@@ -31,21 +35,33 @@
   <div id="selectedDate">Select a date</div>
 
   <div class="history-container">
-    <div class="time-block" id="morningBlock">
+    <div class="time-block">
       <h4>🌅 Morning</h4>
       <ul id="morningLogs"></ul>
     </div>
-    <div class="time-block" id="noonBlock">
+    <div class="time-block">
       <h4>🌞 Noon</h4>
       <ul id="noonLogs"></ul>
     </div>
-    <div class="time-block" id="eveningBlock">
+    <div class="time-block">
       <h4>🌙 Evening</h4>
       <ul id="eveningLogs"></ul>
     </div>
   </div>
 
   <p id="dailyTotal"></p>
+</section>
+
+<!-- Daily Graph -->
+<section class="graph">
+  <h3>📊 Monthly Hydration Graph</h3>
+  <canvas id="hydrationChart"></canvas>
+</section>
+
+<!-- Monthly Comparison Graph -->
+<section class="graph">
+  <h3>📈 Monthly Comparison</h3>
+  <canvas id="monthlyComparisonChart"></canvas>
 </section>
 
 <script src="js/calendar.js"></script>
